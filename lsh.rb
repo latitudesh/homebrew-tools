@@ -5,20 +5,20 @@
 class Lsh < Formula
   desc ""
   homepage "https://www.latitude.sh/"
-  version "1.2.0"
+  version "1.3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.2.0/lsh_Darwin_x86_64.tar.gz"
-      sha256 "ad6dd3a6eb8eeb5b6a56e0d595ad0d9501b37b30024b3537da70e064bc02a0e4"
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.0/lsh_Darwin_x86_64.tar.gz"
+      sha256 "d1e2aeaa0e17825e1b39eb1a90883d6453481314e25d81af69ea224d5ebe4345"
 
       def install
         bin.install "lsh"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.2.0/lsh_Darwin_arm64.tar.gz"
-      sha256 "6f1e19c89b4ff8c67061c6ebfab6b65f5f142253b7bb6059246f92b0efefadbb"
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.0/lsh_Darwin_arm64.tar.gz"
+      sha256 "ab900e2d13f638434489517fad4be36facfb5cf8564c460761dc8f26cae76ed4"
 
       def install
         bin.install "lsh"
@@ -27,17 +27,17 @@ class Lsh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.2.0/lsh_Linux_arm64.tar.gz"
-      sha256 "b264490ecc678c762bc57091db2f001cc348b303c88fa46145b71fcaad3ac20c"
+    if Hardware::CPU.intel?
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.0/lsh_Linux_x86_64.tar.gz"
+      sha256 "ac79e8c9c133c6a089466a2980a633d291148bd347bd67ce7550e8cd31920abf"
 
       def install
         bin.install "lsh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.2.0/lsh_Linux_x86_64.tar.gz"
-      sha256 "fbd918f0c625a0fe52569375867ca9d69d6bab6af386ad4eb405fb41d79666a6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.0/lsh_Linux_arm64.tar.gz"
+      sha256 "4db8ab3ea43815ebf8f9b8b8e4f70692a91e753e71ceaebcdb04bdf4ad0fddd8"
 
       def install
         bin.install "lsh"

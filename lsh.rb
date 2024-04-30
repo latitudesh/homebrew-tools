@@ -5,20 +5,20 @@
 class Lsh < Formula
   desc ""
   homepage "https://www.latitude.sh/"
-  version "1.3.1"
+  version "1.3.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.1/lsh_Darwin_x86_64.tar.gz"
-      sha256 "91cc617163373b36092a171a70791b90a11a965f339e044b4cd896e6b2867924"
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Darwin_x86_64.tar.gz"
+      sha256 "84104c6f9c9bf2532d14a376bd2d078e176b41c3564ac813a703c6f4ce974d19"
 
       def install
         bin.install "lsh"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.1/lsh_Darwin_arm64.tar.gz"
-      sha256 "deef18b696432d72ee1000fabb8ea8ee7cb5523152d46d5d640b886d988c0111"
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Darwin_arm64.tar.gz"
+      sha256 "7a5d0dd59df73db20d331f0eff88890dc4916e50e7da1a3bd0d89c4bddfd874c"
 
       def install
         bin.install "lsh"
@@ -28,16 +28,16 @@ class Lsh < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.1/lsh_Linux_x86_64.tar.gz"
-      sha256 "6052192d15e88f3ed02eeb884bdcb9e92e1b32ea9c15cee21ed08139eeaa7834"
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Linux_x86_64.tar.gz"
+      sha256 "fde03ce7f125f65120e21d17163c2a3331cb4f44c57f5b78f3ef690e9221e3fd"
 
       def install
         bin.install "lsh"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.1/lsh_Linux_arm64.tar.gz"
-      sha256 "c7adc4aefc046cd4baaf00d123a64957a16859c67190a944e9b4a4cc1ad4bc4a"
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Linux_arm64.tar.gz"
+      sha256 "a0ed0a96649895fa556fe4ba8804820081e36612140f269c2dd88a98014a02fc"
 
       def install
         bin.install "lsh"

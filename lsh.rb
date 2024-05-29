@@ -5,20 +5,20 @@
 class Lsh < Formula
   desc ""
   homepage "https://www.latitude.sh/"
-  version "1.3.2"
+  version "1.3.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Darwin_x86_64.tar.gz"
-      sha256 "84104c6f9c9bf2532d14a376bd2d078e176b41c3564ac813a703c6f4ce974d19"
+    on_intel do
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Darwin_x86_64.tar.gz"
+      sha256 "984070d46bacfba8362f40b3c644e2fe0fc48af130bc14911bbf463e80648abb"
 
       def install
         bin.install "lsh"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Darwin_arm64.tar.gz"
-      sha256 "7a5d0dd59df73db20d331f0eff88890dc4916e50e7da1a3bd0d89c4bddfd874c"
+    on_arm do
+      url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Darwin_arm64.tar.gz"
+      sha256 "70550a0e5579acf267df9f24f11c51c1e9eefce003952c754503f95ee567a40d"
 
       def install
         bin.install "lsh"
@@ -27,20 +27,24 @@ class Lsh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Linux_x86_64.tar.gz"
-      sha256 "fde03ce7f125f65120e21d17163c2a3331cb4f44c57f5b78f3ef690e9221e3fd"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Linux_x86_64.tar.gz"
+        sha256 "253071799a9e20d7e969f45adba16543e16c1ccbcbf2042aabf384ff3e816eef"
 
-      def install
-        bin.install "lsh"
+        def install
+          bin.install "lsh"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.2/lsh_Linux_arm64.tar.gz"
-      sha256 "a0ed0a96649895fa556fe4ba8804820081e36612140f269c2dd88a98014a02fc"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Linux_arm64.tar.gz"
+        sha256 "80b9538a6f795d9dcff68ebabcf7d2709ec9d8b8e2be37f64f97843b514b8778"
 
-      def install
-        bin.install "lsh"
+        def install
+          bin.install "lsh"
+        end
       end
     end
   end

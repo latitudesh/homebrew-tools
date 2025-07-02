@@ -5,23 +5,23 @@
 class Lsh < Formula
   desc ""
   homepage "https://www.latitude.sh/"
-  version "1.3.3"
+  version "1.4.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Darwin_x86_64.tar.gz"
-      sha256 "984070d46bacfba8362f40b3c644e2fe0fc48af130bc14911bbf463e80648abb"
+      url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Darwin_x86_64.tar.gz"
+      sha256 "29f0499908b6b7b2c8dcc1517b7dbf80224b5d5a6560e96d146045aa06fcd64c"
 
       def install
-        bin.install "lsh"
+        bin.install "cli"
       end
     end
     on_arm do
-      url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Darwin_arm64.tar.gz"
-      sha256 "70550a0e5579acf267df9f24f11c51c1e9eefce003952c754503f95ee567a40d"
+      url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Darwin_arm64.tar.gz"
+      sha256 "15a353cc0df47bab1c5c7be3cf62010af1d53bd1b4919a4a59606421073c4094"
 
       def install
-        bin.install "lsh"
+        bin.install "cli"
       end
     end
   end
@@ -29,21 +29,21 @@ class Lsh < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Linux_x86_64.tar.gz"
-        sha256 "253071799a9e20d7e969f45adba16543e16c1ccbcbf2042aabf384ff3e816eef"
+        url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Linux_x86_64.tar.gz"
+        sha256 "8a330c1f141813e7361b883da36d1c2b32ddc38c9256b3b43ec010c01082c70b"
 
         def install
-          bin.install "lsh"
+          bin.install "cli"
         end
       end
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/latitudesh/lsh/releases/download/v1.3.3/lsh_Linux_arm64.tar.gz"
-        sha256 "80b9538a6f795d9dcff68ebabcf7d2709ec9d8b8e2be37f64f97843b514b8778"
+        url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Linux_arm64.tar.gz"
+        sha256 "a3c6229135a7d842827c63ede2b4e677e939354731d7e2301839a2d0c63cbbd9"
 
         def install
-          bin.install "lsh"
+          bin.install "cli"
         end
       end
     end

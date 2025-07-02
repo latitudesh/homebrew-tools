@@ -10,7 +10,7 @@ class Lsh < Formula
   on_macos do
     on_intel do
       url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Darwin_x86_64.tar.gz"
-      sha256 "29f0499908b6b7b2c8dcc1517b7dbf80224b5d5a6560e96d146045aa06fcd64c"
+      sha256 "b1b6d8845734a2317e18a971d5488e6885d65685fe2cfe0b85bd978503b58433"
 
       def install
         bin.install "cli"
@@ -18,7 +18,7 @@ class Lsh < Formula
     end
     on_arm do
       url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Darwin_arm64.tar.gz"
-      sha256 "15a353cc0df47bab1c5c7be3cf62010af1d53bd1b4919a4a59606421073c4094"
+      sha256 "2e22e2664aeaade9bb99c824b2521d661370b5a26d0a977dd517e31f0cdd8081"
 
       def install
         bin.install "cli"
@@ -30,7 +30,7 @@ class Lsh < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Linux_x86_64.tar.gz"
-        sha256 "8a330c1f141813e7361b883da36d1c2b32ddc38c9256b3b43ec010c01082c70b"
+        sha256 "f84526ebf995980402cb3efcf1b87bd6ec256c32d2237f265ebf6a4e639fe397"
 
         def install
           bin.install "cli"
@@ -40,7 +40,7 @@ class Lsh < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/latitudesh/cli/releases/download/v1.4.0/cli_Linux_arm64.tar.gz"
-        sha256 "a3c6229135a7d842827c63ede2b4e677e939354731d7e2301839a2d0c63cbbd9"
+        sha256 "ea0d37eabbe135cbd11d4aec7263462c09d765462add1d43a9a1613de2887cc9"
 
         def install
           bin.install "cli"

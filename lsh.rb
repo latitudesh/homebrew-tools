@@ -1,50 +1,32 @@
-# typed: false
-# frozen_string_literal: true
-
 class Lsh < Formula
-  desc ""
+  desc "Latitude.sh CLI tool"
   homepage "https://www.latitude.sh/"
-  version "1.4.0"
+  version "1.5.2"
+  license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/latitudesh/cli/releases/download/v1.4.2/lsh_Darwin_x86_64.tar.gz"
-      sha256 "d019deb790bdb20db464c2f09453dca2d834ea77b703476afa2f9227265e1678"
-
-      def install
-        bin.install "lsh"
-      end
-    end
-    on_arm do
-      url "https://github.com/latitudesh/cli/releases/download/v1.4.2/lsh_Darwin_arm64.tar.gz"
-      sha256 "e832601135259bee7a0b22eab71df233bb4a20e7186cb630a738bf8d2680dbf5"
-
-      def install
-        bin.install "lsh"
-      end
+    if Hardware::CPU.arm?
+      url "https://github.com/latitudesh/cli/releases/download/v1.5.2/lsh_Darwin_arm64.tar.gz"
+      sha256 "932a42ae5ab92ace05901bb48cfc255e42e8d6ac3537f5280e0f20516638d2c8"
+    else
+      url "https://github.com/latitudesh/cli/releases/download/v1.5.2/lsh_Darwin_x86_64.tar.gz"
+      sha256 "2e26974118bf527d92148e83b55e83dc7d2a93b2088fa9c1e7ff4ec0d29ad425"
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/latitudesh/cli/releases/download/v1.4.2/lsh_Linux_x86_64.tar.gz"
-        sha256 "642ad72e70ac91b070d9e97c9544637b35f8e6f8406dbae973ca0329b33ae177"
-
-        def install
-          bin.install "lsh"
-        end
-      end
-    end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/latitudesh/cli/releases/download/v1.4.2/lsh_Linux_arm64.tar.gz"
-        sha256 "754a612fb34700958196be80f351168288305cdd8f6cda9e5977d3b56259095e"
-
-        def install
-          bin.install "lsh"
-        end
-      end
+    if Hardware::CPU.intel?
+      url "https://github.com/latitudesh/cli/releases/download/v1.5.2/lsh_Linux_x86_64.tar.gz"
+      sha256 "3d34dbb864c6e9e3a521fefbbff68ef60cd99786265cb0dfe256e019863a9874"
     end
   end
+
+  def install
+    bin.install "lsh"
+  end
+
+  test do
+    system "#{bin}/lsh", "version"
+  end
 end
+

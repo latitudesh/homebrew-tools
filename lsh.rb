@@ -1,23 +1,23 @@
 class Lsh < Formula
   desc "Latitude.sh CLI tool"
   homepage "https://www.latitude.sh/"
-  version "1.5.5"
+  version "1.5.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/latitudesh/cli/releases/download/v1.5.5/lsh_Darwin_arm64.tar.gz"
-      sha256 "073fc8d80c758c194060ecb541d53d0890e4881e115d21129dd3160a3512637e"
+      url "https://github.com/latitudesh/cli/releases/download/v1.5.7/lsh_Darwin_arm64.tar.gz"
+      sha256 "60ac01ebc3c5688633c2059715e454a65c0cf2b50f0feaed9d72406b0702164c"
     else
-      url "https://github.com/latitudesh/cli/releases/download/v1.5.5/lsh_Darwin_x86_64.tar.gz"
-      sha256 "9d3981f9a6ba6ae46aacaa0b4a6c2293f298142fc466afd9c1404cb2da42cd9b"
+      url "https://github.com/latitudesh/cli/releases/download/v1.5.7/lsh_Darwin_x86_64.tar.gz"
+      sha256 "b15eb38393e750560e4a691233724b87fdd408285b54e3d4420563158859c450"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/latitudesh/cli/releases/download/v1.5.5/lsh_Linux_x86_64.tar.gz"
-      sha256 "b41d31c58f5f51a9d8b1a4a4c8f3cfecd542542a95823c506d895910a38b1d35"
+      url "https://github.com/latitudesh/cli/releases/download/v1.5.7/lsh_Linux_x86_64.tar.gz"
+      sha256 "d2a031ff751cb2d43ce9987d4762ddf8a31dbd3c91bd1f0ac3ff929863b33db8"
     end
   end
 
